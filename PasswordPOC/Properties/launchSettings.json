@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PasswordPOC": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
