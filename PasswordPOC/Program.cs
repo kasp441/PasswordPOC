@@ -53,6 +53,7 @@ namespace PasswordPOC
         {
             while (true)
             {
+                Console.Clear();
                 Console.WriteLine("press 1 for seeing your credentials");
                 Console.WriteLine("press 2 for adding a new credential to manage");
                 Console.WriteLine("press 3 to exit");
@@ -92,12 +93,32 @@ namespace PasswordPOC
 
         static void AddCredentials()
         {
+            var password = "";
             Console.WriteLine("Please provide the domain:");
             var domain = Console.ReadLine();
             Console.WriteLine("Please provide the username:");
             var username = Console.ReadLine();
-            Console.WriteLine("Please provide the password:");
-            var password = Console.ReadLine();
+            //generate or provide password
+            Console.WriteLine("Do you want to generate a password? (y/n)");
+            var response = Console.ReadLine();
+            if (response == "n")
+            {
+                Console.WriteLine("Please provide the password:");
+                password = Console.ReadLine();
+            }
+            else if (response == "y")
+            {
+                password = GeneratePassword();
+                Console.WriteLine($"your password is: ");
+                Console.WriteLine(password);
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. please write either y for yes or n for no");
+                return;
+            }
+
 
             service.addCredentials(new Credentials
             {
@@ -108,6 +129,20 @@ namespace PasswordPOC
 
             Console.WriteLine("Credential added successfully!");
             Console.ReadLine();
+        }
+
+        static string GeneratePassword()
+        {
+            Console.WriteLine("Please provide the length of the password:");
+            try {
+                var length = int.Parse(Console.ReadLine());
+                return PasswordGenerator.GeneratePassword(length);
+            } catch (Exception)
+            {
+                Console.WriteLine("Invalid input. please write a number");
+                return GeneratePassword();
+            }
+            
         }
     }
 }
