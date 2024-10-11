@@ -28,7 +28,8 @@ namespace PasswordPOC
             if (response == "n")
             {
                 Console.Clear();
-                kfg.SaveToFile("keyfile.key");
+                var keyLocation = kfg.SaveToFile("keyfile.key");
+                keyfile = kfg.ReadKeyFromFile(keyLocation);
                 Console.WriteLine("Key file generated and saved to keyfile.key");
                 Console.ReadLine();
                 return true;

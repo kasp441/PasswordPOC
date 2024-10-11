@@ -31,11 +31,12 @@ namespace PasswordPOC.Helpers
             }
         }
 
-        public void SaveToFile(string fileName = "keyfile.bin")
+        public string SaveToFile(string fileName = "keyfile.bin")
         {
             var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             var filePath = Path.Combine(desktopPath, fileName);
             File.WriteAllBytes(filePath, Key);
+            return filePath;
         }
 
         public byte[] ReadKeyFromFile(string filePath)
