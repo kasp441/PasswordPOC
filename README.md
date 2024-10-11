@@ -23,23 +23,23 @@
    - just open the solution file with visual studio and run
 
 # *Screenshots of the product*
-   - *single factor login*
-   - ![alt text](image.png)
+   - *single factor login* <br>
+![alt text](image.png)
 
-   - *automatic generation of keyfiles (which is currently placed at desktop)*
-   - ![alt text](image-1.png)
+   - *automatic generation of keyfiles (which is currently placed at desktop)* <br>
+![alt text](image-1.png)
 
-   - *simple interface
-   - ![alt text](image-5.png)
+   - *simple interface <br>
+![alt text](image-5.png)
 
-   - *console application reconices if you simply drag the file to the console*
-   - ![alt text](image-2.png)
+   - *console application reconices if you simply drag the file to the console* <br>
+![alt text](image-2.png)
 
-   - *password generation if wished for*
-   - ![alt text](image-4.png)
+   - *password generation if wished for* <br>
+![alt text](image-4.png)
 
-   - *easy overview of passwords*
-   - ![alt text](image-6.png)
+   - *easy overview of passwords* <br>
+![alt text](image-6.png)
 
 # *Discussion about security of your product*
 
